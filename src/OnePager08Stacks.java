@@ -8,7 +8,8 @@ public class OnePager08Stacks {
 
 		//Question 1: 
 		//Why did I ask this?
-		// I want to check you understand the basic push and 
+			//I want to check you understand of the basic push function
+		
 		//For this exercise assume an ArrayList is the "COLLECTION"
 		//An extension here is think about if the question indicated which
 		//element should be at the base of the stack. 
