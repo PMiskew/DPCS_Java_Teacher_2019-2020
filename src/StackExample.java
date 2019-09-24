@@ -1,4 +1,13 @@
+//THIS IS AN HL TOPIC
 import java.util.Stack;
+
+
+/*
+ * 
+ * Note, this example has been pulled directly from the site. 
+ * https://www.callicoder.com/java-stack/
+ * 
+ */
 
 public class StackExample {
 	
