@@ -36,6 +36,12 @@ public class $PM {
 		
 	}
 	
+	/**
+	 * 
+	 * @param a
+	 * @param n
+	 * @return
+	 */
 	public static String pullN(String a, int n) {
 		
 		if (n > a.length()) {
