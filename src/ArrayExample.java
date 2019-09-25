@@ -24,6 +24,20 @@ public class ArrayExample {
 		int[] nums2 = {1,2,3,4}; //Length = 4, indexes 0 - 3
 		String[] words2 = {"Monkey","Fish"}; //Length = 2, Indexes 0 - 1
 		
+		//Finding the length
+		//The length of an array is stored as a public constant in the Array Object.  
+		//Why is the length so important:  
+		//	The length is essential because when generalizing an approach we use the 
+		//	length as a starting point to calculate a specific point in the array.  
+		// 	This is then used for accessing a specific element or in a loop structure.
+		//IB POINT: 
+		//	The IB uses the generic term COLLECTION to represent a variety of data structures
+		//	When using a collection the length is unknown and cannot be accessed.  Read questions
+		//	very carefully and ensure you are working with an array and not a generic collection. 
+		//	On the IB exam you can use any reasonable notation to indicate the length of an array. 
+		
+		
+		int lennums = nums.length;
 		//Accessing Elements
 		nums[1] = 5;
 		nums[3] = 2;
