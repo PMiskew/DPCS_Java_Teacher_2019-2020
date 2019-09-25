@@ -39,11 +39,63 @@ public class ArrayExample {
 		
 		int lennums = nums.length;
 		//Accessing Elements
-		nums[1] = 5;
-		nums[3] = 2;
+		nums[1] = 5;  //accesses index 1 in array nums
+		nums[3] = 2;  //acceses index 3 in array nums
+		nums[lennums - 1] = 3; //accesses last index of nums and sets to 3
+		
+		
+		//CAUTION: 
+		//The below line will print out the memory reference to nums, not the values. 
+		//This is because it is a reference variable with not built in function to print. 
+		//We explore what this means more below. 
+		
+		System.out.println(nums);
+		
+		//PRINT OUT ARRAY QUICK
+		//To print out the array quickly we use a built in method in the Arrays 
+		
+		//accesses last element in nums
 		
 		System.out.println(nums[0]);
 		System.out.println(nums[1]);
+		
+		
+		
+		//Looping Through an array
+
+		//Why learn this?
+		//	Learning how to loop through an array is essential for algorithm development. 
+		//	By looping through an array you can check elements in sequence and perform a number
+		//	of useful processes such as finding a totol, maximum, minimum or the average.  
+
+		//How do I think of loops?
+		//	I think of the count, check, change.  This was an approach shared by a student and it
+		//	really resonated with many others in the class.  
+		//	for (<count>, <check>, <change>)
+		// 	count = the variable we use and where we start
+		//	check = the check we do once at the start and each time the loop runs
+		//	change = the change that is made at the end of the loop. 
+		
+		//Front to End
+		
+		System.out.println("PRINTED ELEMENTS FRONT TO END");
+		for (int i = 0; i < nums.length; i = i + 1) {
+			System.out.println(nums[i]);
+			
+		}
+		
+		//End to start
+		System.out.println("PRINTED ELEMENTS END TO START");
+		for (int i = nums.length - 1; i >= 0; i = i - 1) {
+			System.out.println(nums[i]);
+		}
+		
+		
+		//REFERENCE VARIABLE:
+		//  You hear this term reference variable a lot, but what does that mean. 
+		//  What is this means is that the computer stores the location of the data 
+		//  in the memory register for nums. When we print it out we are getting the 
+		//	Hexadecimal value, which represents the location in memory.  
 		
 	}
 
