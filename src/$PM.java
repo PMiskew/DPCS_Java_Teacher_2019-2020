@@ -13,6 +13,12 @@ public class $PM {
 	 */
 	public static boolean linearSearch(int[] nums, int a) {
 		//CODE NEEDED
+		for (int i = 0; i < nums.length; i = i + 1) {
+			if (nums[i] == a) {
+				return true;
+			}
+		}
+		
 		
 		return false;
 	}
@@ -28,12 +34,57 @@ public class $PM {
 	 */
 	public static int base2To10(int n) {
 		//CODE NEEDED
+		int power = 0;
+		int result = 0;
 		
+				
+		
+		while (n > 0) {
+			//Core Technique - Accessing units digit
+			int x = n%10;  
+			n = n /10;
+			
+			result = result + x * (int)(Math.pow(2,power));
+			power = power + 1;
+			
+		
+		}
+		
+		return result;
 		
 		
 		
 
-		return -1;
+	}
+	
+	
+	/**
+	 * This method takes a positive base 10 integer and returns a binary representation. 
+	 * 
+	 * @param n
+	 * @return
+	 * 
+	 * precondition: n must be a positive integer value. 
+	 * 
+	 */
+	public static int base10To2(int n) {
+		
+		//Why does storing the result in string makes sense here?
+		//
+		String result = "0";
+		
+		while (n != 0) {
+			
+			int value = n % 2;
+			System.out.println(value);
+			n = n / 2; //integer division
+			result = ""+value + result;
+			
+				
+		}
+		
+		return Integer.parseInt(result);
+		
 	}
 	
 	
@@ -126,6 +177,12 @@ public class $PM {
 		double value = calcEvenAverage(nums);
 		System.out.println(value);
 		
+		
+		//Test Code base2To10
+		System.out.println(base2To10(100000));
+		
+		//Test Code base10To2
+		System.out.println(base10To2(5));
 		
 	}
 
