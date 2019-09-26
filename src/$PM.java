@@ -2,6 +2,43 @@
 public class $PM {
 
 	
+//START
+//**************************CLASS WORK (Thursday, September 23rd (P4)*************************************
+	
+	/**
+	 * 
+	 * @param nums
+	 * @param a
+	 * @return
+	 */
+	public static boolean linearSearch(int[] nums, int a) {
+		//CODE NEEDED
+		
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @param n
+	 * @return
+	 * 
+	 * precondition: n must be an integer containing only the values 0 or 1. 
+	 * 
+	 */
+	public static int base2To10(int n) {
+		//CODE NEEDED
+		
+		
+		
+		
+
+		return -1;
+	}
+	
+	
+//**************************CLASS WORK (Thursday, September 23rd (P4)*************************************
+//END
 	
 	
 	public static void print(String s) {
