@@ -1,7 +1,78 @@
 
 public class $PM {
 
+//START
+//**************************CLASS WORK (Monday, September 30rd (P2)*************************************
+
+	public static int base10ToBase2(int n) {
+		
+		/*
+		 * If I divide two integers in java it automatically
+		 * does integer division
+		 * int x = 7;
+		 * int y = 3;
+		 * int z = x/y --> 2
+		 */
+		String r = "";
 	
+		
+		while (n > 0) {
+			
+			int x = n%2;
+			n = n / 2; //This is integer division. 
+			r = x + r;
+			
+		}
+		
+		//Changing Type:
+		//Changing type is called "casting"
+		//In Java (and all languages) there are "shortcuts"
+	
+		return Integer.parseInt(r);
+			
+		
+	}
+	
+	//If you fininsh this, create a version that does
+	//base 10 to base n
+	
+	/**
+	 * 
+	 * @param n
+	 * @param base
+	 * @return
+	 * 
+	 * precondition: n < 10
+	 * 
+	 */
+	public static int base10toBaseN(int n, int base) {
+		
+		/*
+		 * If I divide two integers in java it automatically
+		 * does integer division
+		 * int x = 7;
+		 * int y = 3;
+		 * int z = x/y --> 2
+		 */
+		String r = "";
+	
+		
+		while (n > 0) {
+			
+			int x = n%base;
+			n = n / base; //This is integer division. 
+			r = x + r;
+			
+		}
+		
+		//Changing Type:
+		//Changing type is called "casting"
+		//In Java (and all languages) there are "shortcuts"
+	
+		return Integer.parseInt(r);
+			
+		
+	}
 //START
 //**************************CLASS WORK (Thursday, September 23rd (P4)*************************************
 	
@@ -200,7 +271,11 @@ public class $PM {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		//Variables to use
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		
 		print("Paul");
 		//Test Code addString
 		System.out.println(addStrings("Paul","Miskew"));
@@ -214,8 +289,9 @@ public class $PM {
 		System.out.println(base2To10A(100000));
 		
 		//Test Code base10To2
-		System.out.println(base10To2(5));
+		System.out.println(base10ToBase2(233));
 		
+		//Test Code 
 	}
 
 }

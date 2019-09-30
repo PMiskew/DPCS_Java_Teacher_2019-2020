@@ -7,6 +7,7 @@ public class LinkedListDemo {
     public static void main(String[] args) {
         // Creating a LinkedList
         LinkedList<String> friends = new LinkedList<>();
+        String location = null;
 
         // Adding new elements to the end of the LinkedList using add() method.
         friends.add("Rajeev");
@@ -14,6 +15,9 @@ public class LinkedListDemo {
         friends.add("David");
         friends.add("Chris");
 
+        location = friends.getFirst();
+        System.out.println(location);
+        
         System.out.println("Initial LinkedList : " + friends);
 
         // Adding an element at the specified position in the LinkedList
