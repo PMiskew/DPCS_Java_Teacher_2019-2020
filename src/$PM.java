@@ -54,7 +54,7 @@ public class $PM {
 		 * int y = 3;
 		 * int z = x/y --> 2
 		 */
-		String r = "";
+		String r = ""; 
 	
 		
 		while (n > 0) {
