@@ -1,6 +1,67 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 public class $PM {
+//YEAR 12 HL FUNCTIONS
+	
+	/**
+	 * This function takes a stack as an argument and does not return anything
+	 * @param stack
+	 * 
+	 * pre-condition: stack is not null
+	 * post-condition: argument stack is reversed.
+	 * 
+	 * LEARNING:  This highlights the power of reference variables.  Since a stack is a 
+	 * reference variable there is no need to return it for changes to take effect. 
+	 */
+	public static void reverseStack(Stack<String> stack) {
+		System.out.println("Test");
+        Queue<String> waitingQueue = new LinkedList<String>();
+        Stack<String> newStack = new Stack<String>();
+        
 
+        	
+		while (!stack.isEmpty()) {
+			
+			waitingQueue.add(stack.pop());
+			
+		}
+		
+		while (!waitingQueue.isEmpty()) {
+			stack.push(waitingQueue.remove());
+		}
+		
+
+	}
+	
+	/**
+	 * 
+	 * @param stack
+	 */
+	public static void examQuestion2015_13(Stack<Object> stack) {
+	
+		while (!stack.isEmpty()) {
+			
+			int steps = stack.pop();
+			System.out.println("Take "+steps+" steps");
+			int turn = stack.pop();
+			
+			if (turn == 0) {
+				System.out.println("Turn Left");
+			}
+			else {
+				System.out.println("Turn Right");
+			}
+			
+			
+		}
+		
+		
+		
+		
+	}
+	
 //START
 //**************************CLASS WORK (Monday, September 30rd (P2)*************************************
 
@@ -291,7 +352,33 @@ public class $PM {
 		//Test Code base10To2
 		System.out.println(base10ToBase2(233));
 		
-		//Test Code 
+		//Test Code YEAR 12 HL CODE
+		Stack<String> stack = new Stack<String>();
+		stack.add("One");
+		stack.add("Two");
+		stack.add("Three");
+		
+		System.out.println(stack);
+		reverseStack(stack);
+		System.out.println(stack);
+		
+		
+		//Test Code Exam
+		Stack<Integer> eq2015_13 = new Stack<Integer>();
+		
+		eq2015_13.add(0);
+		eq2015_13.add(3);
+		eq2015_13.add(1);
+		eq2015_13.add(5);
+		eq2015_13.add(1);
+		eq2015_13.add(10);
+		eq2015_13.add(0);
+		eq2015_13.add(6);
+		eq2015_13.add(1);
+		eq2015_13.add(4);
+		examQuestion2015_13(eq2015_13);
+		
+		
 	}
 
 }
