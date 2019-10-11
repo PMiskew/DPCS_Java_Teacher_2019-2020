@@ -3,6 +3,8 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class $PM {
+	
+	
 //YEAR 12 HL FUNCTIONS
 	
 	/**
@@ -43,9 +45,9 @@ public class $PM {
 	
 		while (!stack.isEmpty()) {
 			
-			int steps = stack.pop();
+			int steps = (int) stack.pop();
 			System.out.println("Take "+steps+" steps");
-			int turn = stack.pop();
+			int turn = (int) stack.pop();
 			
 			if (turn == 0) {
 				System.out.println("Turn Left");
@@ -60,6 +62,85 @@ public class $PM {
 		
 		
 		
+	}
+	
+	
+//START
+//**************************CLASS WORK (Thursday, October 10th (P2)*************************************
+	
+	/**
+	 * This function takes an array of integers and returns 
+	 * the sum of the digits. 
+	 * @param a
+	 * @return
+	 * 
+	 * pre-condition: All elements are 2 digit in length
+	 * post-condition: a is not changed when the function is done. 
+	 * 
+	 */
+	public static int findArrayDigitSum(int[] a) {
+	
+		//I WILL MAKE A VIDEO SOLUTION TO THIS. 
+		int sum = 0;
+		
+		//loop through array
+		for (int i = 0; i < a.length; i = i + 1) {
+			
+			int temp = a[i]; //ASSIGNMENT STATEMENT
+			int n1 = temp%10;
+			int n2 = temp/10; //JAVA SPECIFIC INT/INT --> INT DIVISION
+			sum = sum + n1 + n2;
+		}
+		
+	
+		return sum;
+	}
+
+	/**
+	 * This function takes an array of integers and returns 
+	 * the sum of the digits.  This is an alternate implementation
+	 * that treats the digit as a string. 
+	 * @param a
+	 * @return
+	 * 
+	 * pre-condition: All elements are 2 digit in length
+	 * post-condition: a is not changed when the function is done. 
+	 * 
+	 */
+	public static int findArrayDigitSumSTR(int[] a) {
+	
+		int sum = 0;
+		
+		for (int i = 0; i < a.length; i = i + 1) {
+			
+			//CASTING - Process of changing type.
+			String temp = "" + a[i];
+			String n1 = temp.substring(0,1);
+			
+			String n2 = "0";
+			
+			if (temp.length() > 1) {
+				n2 = temp.substring(1,2);
+			}
+			sum = sum + Integer.parseInt(n1) + Integer.parseInt(n2);
+		
+		}
+		
+		return sum;
+		
+		
+	}
+	
+	
+		
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Variables to use
+		int[] arr = {23,12,89};
+		int[] arr2 = {2,12,89};
+		System.out.println(findArrayDigitSum(arr));
+		System.out.println(findArrayDigitSumSTR(arr2));
 	}
 	
 //START
@@ -329,56 +410,6 @@ public class $PM {
 		
 	}
 	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//Variables to use
-		int x = 0;
-		int y = 0;
-		int z = 0;
-		
-		print("Paul");
-		//Test Code addString
-		System.out.println(addStrings("Paul","Miskew"));
-		
-		int[] nums = {1,2,3,4,5,6};
-		double value = calcEvenAverage(nums);
-		System.out.println(value);
-		
-		
-		//Test Code base2To10A
-		System.out.println(base2To10A(100000));
-		
-		//Test Code base10To2
-		System.out.println(base10ToBase2(233));
-		
-		//Test Code YEAR 12 HL CODE
-		Stack<String> stack = new Stack<String>();
-		stack.add("One");
-		stack.add("Two");
-		stack.add("Three");
-		
-		System.out.println(stack);
-		reverseStack(stack);
-		System.out.println(stack);
-		
-		
-		//Test Code Exam
-		Stack<Integer> eq2015_13 = new Stack<Integer>();
-		
-		eq2015_13.add(0);
-		eq2015_13.add(3);
-		eq2015_13.add(1);
-		eq2015_13.add(5);
-		eq2015_13.add(1);
-		eq2015_13.add(10);
-		eq2015_13.add(0);
-		eq2015_13.add(6);
-		eq2015_13.add(1);
-		eq2015_13.add(4);
-		examQuestion2015_13(eq2015_13);
-		
-		
-	}
+
 
 }
