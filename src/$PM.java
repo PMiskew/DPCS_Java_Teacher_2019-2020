@@ -1,5 +1,7 @@
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class $PM {
@@ -131,6 +133,37 @@ public class $PM {
 		
 	}
 	
+	/**
+	 * Takes a single int that sets the size of an array
+	 * Takes all integer inputs. Returns the array
+	 * @return
+	 */
+	public static int[] inputIntArray() {
+		
+		//Step 1: Create Scanner
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("How many elements: ");
+		int n = s.nextInt(); //instance method, called with an instance s
+		
+		int[] result = new int[n];
+		
+		for (int i = 0; i < n; i = i + 1) {
+			System.out.print("Input value: ");
+			result[i] = s.nextInt();
+			
+		}
+		
+		return result;
+		//Extension Suggestions:
+		// - Create a method that randomly generates an array of ints
+		// - Create a version that takes another type
+		// - Create a version where the size is passed as a parameter. 
+		// - Create a version where you have an upper and lower parameter that restrict inputs.
+		
+		
+		
+	}
 	
 		
 	
@@ -141,6 +174,7 @@ public class $PM {
 		int[] arr2 = {2,12,89};
 		System.out.println(findArrayDigitSum(arr));
 		System.out.println(findArrayDigitSumSTR(arr2));
+		System.out.println(Arrays.toString(inputIntArray()));
 	}
 	
 //START
