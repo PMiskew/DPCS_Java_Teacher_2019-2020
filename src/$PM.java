@@ -7,6 +7,25 @@ import java.util.Stack;
 public class $PM {
 	
 	
+/***********************************************MAIN FUNCTION*******************************
+	/**
+	 * MAIN FUNCTION
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Variables to use
+		int[] arr = {23,12,89};
+		int[] arr2 = {2,12,89};
+		System.out.println(findArrayDigitSum(arr));
+		System.out.println(findArrayDigitSumSTR(arr2));
+		System.out.println(Arrays.toString(inputIntArray()));
+	}
+	
+
+/***********************************************MAIN FUNCTION*******************************
+	
+	
 //YEAR 12 HL FUNCTIONS
 	
 	/**
@@ -69,7 +88,56 @@ public class $PM {
 	
 //START
 //**************************CLASS WORK (Tuesday, October 15th (P3)*************************************
-
+	/**
+	 * This function takes an array of strings and finds the largest value 
+	 * alphabetically. If the array is empty the function returns null
+	 * @param s
+	 * @return
+	 * 
+	 * precondition: The array can be any length but must exist
+	 * postcondition: The array is left unchanged. 
+	 */
+	public static String findAlphaSmallest(String[] s) {
+		
+		//BAD - WORKS BUT VIOLATES POST CONDITION - By using the STATIC function
+		//sort in the arrays class the order of s will be changed. 
+		//Arrays.sort(s);
+		//return s[0];
+		
+		/*
+		//STUDENT QUESTION:
+		// Question: Can't we create another array?
+		//		
+		// Answer: 	Yes.  However, be careful the below line of code
+		//			copies the reference not the actual data so you 
+		//			have 2 references and one object.  Meaning any 
+		//			changes affect s
+		
+		 	String[] temps = s; //BAD!!!
+		//
+		// 
+		 	//fine but inefficient. If you are looping through you might as well
+		 	//find smallest. 
+		 	 
+		 	String[] temp = new String[s.length];
+		 	for (int i = 0; i < s.length; i = i + 1) {
+		 		temp[i] = s[i];
+		 	}
+		 	
+		//*/
+		
+		
+		String min = s[0];
+		
+		for (int i = 0; i < s.length; i = i + 1) {
+			if (s[i].compareToIgnoreCase(min) < 0) {
+				min = s[i];
+			}
+		}
+		
+		return min;
+		
+	}
 	
 //START
 //**************************CLASS WORK (Thursday, October 10th (P2)*************************************
@@ -171,16 +239,7 @@ public class $PM {
 	
 		
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//Variables to use
-		int[] arr = {23,12,89};
-		int[] arr2 = {2,12,89};
-		System.out.println(findArrayDigitSum(arr));
-		System.out.println(findArrayDigitSumSTR(arr2));
-		System.out.println(Arrays.toString(inputIntArray()));
-	}
-	
+
 //START
 //**************************CLASS WORK (Monday, September 30rd (P2)*************************************
 

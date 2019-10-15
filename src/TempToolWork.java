@@ -14,9 +14,34 @@ public class TempToolWork {
 	 */
 	public static String findAlphaSmallest(String[] s) {
 		
-		//BAD - WORKS BUT VIOLATES POST CONDITION
+		//BAD - WORKS BUT VIOLATES POST CONDITION - By using the STATIC function
+		//sort in the arrays class the order of s will be changed. 
 		//Arrays.sort(s);
 		//return s[0];
+		
+		/*
+		//STUDENT QUESTION:
+		// Question: Can't we create another array?
+		//		
+		// Answer: 	Yes.  However, be careful the below line of code
+		//			copies the reference not the actual data so you 
+		//			have 2 references and one object.  Meaning any 
+		//			changes affect s
+		
+		 	String[] temps = s; //BAD!!!
+		//
+		// 
+		 	//fine but inefficient. If you are looping through you might as well
+		 	//find smallest. 
+		 	 
+		 	String[] temp = new String[s.length];
+		 	for (int i = 0; i < s.length; i = i + 1) {
+		 		temp[i] = s[i];
+		 	}
+		 	
+		//*/
+		
+		
 		
 		String min = s[0];
 		
