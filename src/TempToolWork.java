@@ -1,93 +1,45 @@
+import java.util.Arrays;
 
 public class TempToolWork {
 
+
 	/**
-	 * This method takes a base 2 value and returns the base 10 value
-	 * @param n
+	 * This function takes an array of strings and finds the largest value 
+	 * alphabetically. If the array is empty the function returns null
+	 * @param s
 	 * @return
 	 * 
-	 * pre-condition: n can only contain 1 and 0 values. 
+	 * precondition: The array can be any length but must exist
+	 * postcondition: The array is left unchanged. 
 	 */
-	public static int base2To10A(int n) {
+	public static String findAlphaSmallest(String[] s) {
 		
-		int pwr = 0;
-		int r = 0;
+		//BAD - WORKS BUT VIOLATES POST CONDITION
+		//Arrays.sort(s);
+		//return s[0];
 		
-		while (n > 0) {
-			
-			int x = n % 10;
-			n = n / 10; //INTEGER DIVISION
-			
-			//Cast Math.pow(2,pwr) to an int
-			//Casting is the process of changing type
-			//When we cast a double to an int we chop off decimal
-			r = r + x * (int)Math.pow(2, pwr);
-			
-			pwr = pwr + 1;
+		String min = s[0];
 		
+		for (int i = 0; i < s.length; i = i + 1) {
+			if (s[i].compareToIgnoreCase(min) < 0) {
+				min = s[i];
+			}
 		}
 		
-
-		return r;
-		
+		return min;
 		
 	}
-	
-	
-	public static int base2To10B(int n) {
-		
-		/*
-		 * Convert to a string instead of using the mod int div process
-		 */
-		//convert n into a string?
-		String value = "" + n;
-		int pwr = 0;
-		int r = 0;
-		
-		//Bread and butter algorithm: looping through a string and accessing 
-		//each element. Looping through string or array in reverse
-		
-		for (int i = value.length() - 1; i >= 0; i = i - 1) {
-			
-			//Step 1: access the right most digit cast to int
-			//WORKS
-			//int x = Integer.parseInt(value.substring(i,i + 1));
-			//WORKS: MUST CAST char to stirng using "" + char
-			int x = Integer.parseInt(""+value.charAt(i));
-			
-			r = r + x*(int)Math.pow(2,pwr);
-			pwr = pwr + 1;
-			
-		}
-		return r;
-		
-		
-		
-		
-		
-	}
-	
-	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-
-		//Test code base2ToBase10A
-		System.out.println("***********Base 2 to 10A**************");
-		int x = base2To10A(1011);
-		System.out.println(x);
-		x = base2To10A(0);
-		System.out.println(x);
+		String[] arr = {"cat","dog","fish","apple"};
+		String min = findAlphaSmallest(arr);
+		System.out.println(min);
 		
-
-		System.out.println("***********Base 2 to 10B**************");
-		x = base2To10A(1011);
-		System.out.println(x);
-		x = base2To10B(0);
-		System.out.println(x);
+		System.out.println("cat".compareToIgnoreCase("dog"));
+		System.out.println("dog".compareToIgnoreCase("dog"));
+		System.out.println("dog".compareToIgnoreCase("cat"));
 		
-
 	}
 
 }
