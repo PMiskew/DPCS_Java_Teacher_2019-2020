@@ -17,14 +17,28 @@ public class $PM {
 		//Variables to use
 		int[] arr = {23,12,89};
 		int[] arr2 = {2,12,89};
+		
+		//Test Code: 
 		System.out.println(findArrayDigitSum(arr));
 		System.out.println(findArrayDigitSumSTR(arr2));
 		System.out.println(Arrays.toString(inputIntArray()));
 	}
 	
 
-/***********************************************MAIN FUNCTION*******************************
+/***********************************************MAIN FUNCTION*******************************/
+
+/**
+ * This function takes an array of strings and a single string.  It returns true if the string l is 
+ * contained within arr. 
+ * @param arr
+ * @param l
+ * @return
+ */
+public static boolean containsString(String[] arr, String l) {
 	
+	
+	return false;
+}
 	
 //YEAR 12 HL FUNCTIONS
 	
