@@ -15,18 +15,158 @@ public class $PM {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Variables to use
+		
+		
 		int[] arr = {23,12,89};
 		int[] arr2 = {2,12,89};
 		
 		//Test Code: 
-		System.out.println(findArrayDigitSum(arr));
-		System.out.println(findArrayDigitSumSTR(arr2));
-		System.out.println(Arrays.toString(inputIntArray()));
+		//System.out.println(findArrayDigitSum(arr));
+		//System.out.println(findArrayDigitSumSTR(arr2));
+		//System.out.println(Arrays.toString(inputIntArray()));
+		
+		
+		Queue<String> q1 = new LinkedList<>();
+		q1.add("one"); //
+		q1.add("two");
+		q1.add("three");
+		System.out.println(q1);
+		reverseQueue(q1);
+		System.out.println(q1);
+		
 	}
 	
 
 /***********************************************MAIN FUNCTION*******************************/
 
+	
+/***********************************************Class November 18th (HL)**************************/
+	
+
+
+/**
+ * This function takes three ints.  It returns and array of integers values where b <= a[n] <= c.
+ * If a < 0 then the function should return a null reference. 
+ * 
+ *
+ * @param a
+ * @param b
+ * @param c
+ * @return
+ * 
+ * precondition b <= c
+ * 
+ */
+public static int[] createRandomArray(int a, int b, int c)  {
+	
+	//Create an array of ints length a
+	//type[] name = new type[size];
+	
+	int[] arr = new int[a];
+	
+	for (int i = 0; i < arr.length; i = i + 1) {
+	
+		arr[i] = b;
+	
+	}
+	
+	return arr;
+}
+
+
+/**
+ * This function takes an array of integers and a single int.  It returns true if 
+ * b is contained in the array a.  It returns false otherwise. 
+ * @param a
+ * @param b
+ * @return
+ */
+public static boolean foundElement(int a[], int b) {
+	//CODE HERE
+	return false;
+	
+	
+}
+
+/**
+ * This function takes two integers r and c.  It return a 2D array with dimensions [rows][columns]
+ * The array is populated with integers from 1 to rows * columns in a ROW MAJOR ORDER
+ * 
+ * For example rows = 3, columns = 4 the below array is returned. 
+ * 
+ * 1,  2,  3,  4
+ * 5,  6,  7,  8
+ * 9, 10, 11, 12
+ * 
+ * @param rows
+ * @param columns
+ * @return
+ */
+public static int[][] createMatrix(int rows, int columns) {
+	
+	//CODE HERE
+	return null;
+}
+
+/**
+ * This function counts the number of primes that are less than the parameter a
+ * @param a
+ * @return
+ */
+public static int countPrime(int a) {
+	
+	return 0;
+	
+}
+/***********************************************Class November 5th (HL)**************************/
+
+	/**
+	 * This method is a solution to test 1-3 #6.  Students struggled taking two
+	 * nested for loops and writing it as a single while loop.  They missed the 
+	 * idea that they need to duplicate the effect of structure, which was print
+	 * 1 to n
+	 * 
+	 * @param n
+	 */
+	public void test1_3_6(int n) {
+		
+		int k = 1;
+		while (k < n) {
+			System.out.println(k);
+			k = k + 1;
+		}
+		
+		
+	}//end test1_3_6
+	
+	
+	
+/***********************************************Class November 5th (HL)**************************/
+	
+	/**
+	 * This function takes a queue as an argument and will reverse the queue
+	 * 
+	 * @param q
+	 * 
+	 * @postcondition: q is reversed. 
+	 */
+	public static void reverseQueue(Queue<String> q) {
+		
+		Stack<String> s = new Stack<String>();
+		//Empty the queue and fill up the stack
+		while (!q.isEmpty()) {
+			s.push(q.remove());
+		}
+		//Empty stack and put it back in the queue
+		while (!s.isEmpty()) {
+			q.add(s.pop());
+		}
+		
+	}
+
+	
+	
+	
 /**
  * This function takes an array of strings and a single string.  It returns true if the string l is 
  * contained within arr. 
