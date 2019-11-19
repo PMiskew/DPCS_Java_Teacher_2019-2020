@@ -2,68 +2,63 @@ import java.util.Arrays;
 
 public class TempToolWork {
 
-
 	/**
-	 * This function takes an array of strings and finds the largest value 
-	 * alphabetically. If the array is empty the function returns null
-	 * @param s
+	 * This function takes three ints.  It returns an array of size a of integers where b <= arr[n] <= c.
+	 * If a < 0 then the function should return a null reference. 
+	 * 
+	 *
+	 * @param a
+	 * @param b
+	 * @param c
 	 * @return
 	 * 
-	 * precondition: The array can be any length but must exist
-	 * postcondition: The array is left unchanged. 
+	 * precondition b <= c
+	 * 
 	 */
-	public static String findAlphaSmallest(String[] s) {
+	public static int[] createRandomArray(int a, int b, int c)  {
 		
-		//BAD - WORKS BUT VIOLATES POST CONDITION - By using the STATIC function
-		//sort in the arrays class the order of s will be changed. 
-		//Arrays.sort(s);
-		//return s[0];
+		//Create an array of ints length a
+		//type[] name = new type[size];
 		
-		/*
-		//STUDENT QUESTION:
-		// Question: Can't we create another array?
-		//		
-		// Answer: 	Yes.  However, be careful the below line of code
-		//			copies the reference not the actual data so you 
-		//			have 2 references and one object.  Meaning any 
-		//			changes affect s
+		if (a < 0) {
+			return null;
+		}
 		
-		 	String[] temps = s; //BAD!!!
-		//
-		// 
-		 	//fine but inefficient. If you are looping through you might as well
-		 	//find smallest. 
-		 	 
-		 	String[] temp = new String[s.length];
-		 	for (int i = 0; i < s.length; i = i + 1) {
-		 		temp[i] = s[i];
-		 	}
-		 	
-		//*/
+		int[] arr = new int[a];
 		
+		for (int i = 0; i < arr.length; i = i + 1) {
+			
+			int x = (int)(Math.random()*(c + 1 - b) + b);
+			//Generating a random value
+			arr[i] = x;
 		
+		}
 		
-		String min = s[0];
+		return arr;
+	}
+	
+	
+	public static boolean foundElement(int[] a, int b) {
+	//THIS IS A LINEAR SEARCH!!!
 		
-		for (int i = 0; i < s.length; i = i + 1) {
-			if (s[i].compareToIgnoreCase(min) < 0) {
-				min = s[i];
+		for (int i = 0; i < a.length; i = i + 1) {
+			if (a[i] == b) {
+				return true;
 			}
 		}
 		
-		return min;
-		
+		return false;
 	}
 	
+	
 	public static void main(String[] args) {
+	
+		int[] result = createRandomArray(-7,1,9);
+		System.out.println(Arrays.toString(result));
 		
-		String[] arr = {"cat","dog","fish","apple"};
-		String min = findAlphaSmallest(arr);
-		System.out.println(min);
 		
-		System.out.println("cat".compareToIgnoreCase("dog"));
-		System.out.println("dog".compareToIgnoreCase("dog"));
-		System.out.println("dog".compareToIgnoreCase("cat"));
+		
+		
 		
 	}
 

@@ -16,6 +16,10 @@ public class $PM {
 		// TODO Auto-generated method stub
 		//Variables to use
 		
+		int a = 10;
+		System.out.println(a);
+		a = a++;
+		System.out.println(a);
 		
 		int[] arr = {23,12,89};
 		int[] arr2 = {2,12,89};
@@ -34,18 +38,99 @@ public class $PM {
 		reverseQueue(q1);
 		System.out.println(q1);
 		
+		int[][] result = createRandom2DArray(0,0);
+		print2DRowMajor(result);
+		print2DRowMajor(null);
+		
+		
+		
 	}
 	
 
 /***********************************************MAIN FUNCTION*******************************/
 
+/***********************************************Class November 18th (HL)**************************/
+	/**
+	 * This function should generate a random 2D array with dimensions [rows][coluns]
+	 * and populate it with random values from 0 to 99;  It should return a reference
+	 * to the array
+	 * @param rows
+	 * @param columns
+	 * @return
+	 */
+	public static int[][] createRandom2DArray(int rows, int columns) {
+		
+		int[][] arr = new int[rows][columns];
+		//code loop
+		for (int r = 0; r < arr.length; r = r + 1) {
+			
+			for (int c = 0; c < arr[r].length; c = c + 1) {
+				
+				arr[r][c] = (int)(Math.random()*100);
+			}
+		}
+		
+		return arr;
+		
+	}
+	
+	/**
+	 * This function should print out each element on a new line 
+	 * in a row major order.
+	 * @param arr
+	 */
+	public static void print2DRowMajor(int[][] arr) {
+		
+		//This is a null reference check.  This will check if
+		//it is a null reference meaning no array and then 
+		//exit the loop
+		if (arr == null) {
+			return;
+		}
+		
+		//It prints row major because the rows are on the outside. 
+		for (int r = 0; r < arr.length; r = r + 1) {
+			for (int c = 0; c < arr[r].length; c = c + 1) {
+				System.out.println(arr[r][c]);
+			}
+		}
+	
+	}
+	
+	/**
+	 * This function should print out each element on a new line
+	 * in a column major order. 
+	 * @param arr
+	 */
+	public static void print2DColumnMajor(int[][] arr) {
+		
+		//This is a null reference check.  This will check if
+		//it is a null reference meaning no array and then 
+		//exit the loop
+		if (arr == null) {
+			return;
+		}
+		
+		for (int c = 0; c < arr[0].length; c = c + 1) {
+			for (int r = 0; c < arr.length; r = r + 1) {
+				System.out.println(arr[r][c]);
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
 	
 /***********************************************Class November 18th (HL)**************************/
 	
 
 
 /**
- * This function takes three ints.  It returns and array of integers values where b <= a[n] <= c.
+ * This function takes three ints.  It returns an array of size a of integers where b <= arr[n] <= c.
  * If a < 0 then the function should return a null reference. 
  * 
  *
