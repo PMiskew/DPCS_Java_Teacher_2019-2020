@@ -42,13 +42,97 @@ public class $PM {
 		print2DRowMajor(result);
 		print2DRowMajor(null);
 		
-		
+		int[][] sarray = spiralArray(11);
+		for (int r = 0; r < sarray.length; r = r + 1) {
+			for (int c = 0; c < sarray[r].length; c = c + 1) {
+				System.out.print(sarray[r][c]+"\t");
+			}
+			System.out.println();
+		}
 		
 	}
 	
 
 /***********************************************MAIN FUNCTION*******************************/
 
+	public static int[][] spiralArray(int n) {
+		
+		int[][] arr = new int[n][n];
+		
+		int z = 1;
+		
+		int top = 0;
+		int bottom = n - 1;
+		int left = 0;
+		int right = n - 1;
+		int r = 0;
+		int c = 0;
+		
+		System.out.println(top);
+
+		System.out.println(bottom);
+
+		System.out.println(left);
+
+		System.out.println(right);
+		
+		
+		while (z <= n*n) {
+			
+			for (int j = left; j <= right; j = j + 1) {
+				arr[top][j] = z;
+				z = z + 1;
+			}
+			top = top + 1;
+	
+			for (int j = top; j <= bottom; j = j + 1) {
+				arr[j][right] = z;
+				z = z + 1;
+			}
+		
+			right = right - 1;
+			
+			for (int j = right; j >= left; j = j - 1) {
+				arr[bottom][j] = z;
+				z = z + 1;
+			}
+			
+			bottom = bottom - 1;
+			
+			for (int j = bottom; j >= top; j = j - 1) {
+				arr[j][left] = z;
+				z = z + 1;
+			}
+			
+			left = left + 1;
+	}
+		
+	
+		
+		return arr;
+	}	
+/***********************************************Class November 18th (HL)**************************/
+	
+
+	
+	public static int[][] HLP1NOV201714() {
+		
+		int[] values = {7, -3, 9, -1, -6, -5, 1};
+		int[] rowc = {1, 1, 3, 3, 4, 7};
+		int[] col = {0, 2, 4, 2, 1, 4, 5};
+		
+		//ASK: Write the algorithm that will take
+		//	   these three arrays and created the
+		//	   resulting 2D array.  When you run this
+		//	   it should return the 6 by 6 array given 
+		//	   in the question
+		
+		return null;
+		
+	}
+
+	
+	
 /***********************************************Class November 18th (HL)**************************/
 	/**
 	 * This function should generate a random 2D array with dimensions [rows][coluns]
