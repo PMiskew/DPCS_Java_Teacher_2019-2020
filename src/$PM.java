@@ -42,7 +42,7 @@ public class $PM {
 		print2DRowMajor(result);
 		print2DRowMajor(null);
 		
-		int[][] sarray = spiralArray(11);
+		int[][] sarray = genSpiralArray(11);
 		for (int r = 0; r < sarray.length; r = r + 1) {
 			for (int c = 0; c < sarray[r].length; c = c + 1) {
 				System.out.print(sarray[r][c]+"\t");
@@ -54,8 +54,20 @@ public class $PM {
 	
 
 /***********************************************MAIN FUNCTION*******************************/
-
-	public static int[][] spiralArray(int n) {
+	/**
+	 * 
+	 * @param n
+	 * @return
+	 */
+	public static int[][] genSpiralArray(int n) {
+		
+		//catches: Some logic at teh front of the method to stop
+		//		   if things aren't rigth
+		
+		if (n < 0) {
+			return null;
+		}
+		
 		
 		int[][] arr = new int[n][n]; //creates the square array
 		
@@ -104,6 +116,7 @@ public class $PM {
 	/*
 	 * for n = 5
 	 * After pass 1
+	 * top = 0, bottom = 4, left = 0, right = 4
 	 *  1	 2	 3	 4	 5
 	 * 16	 0	 0	 0	 6		
 	 * 15	 0	 0	 0	 7
@@ -112,6 +125,7 @@ public class $PM {
 	 
 	 * 
 	 * After pass 2
+	 * top = 1, bottom = 3, left = 1, right = 3
 	 *  1	 2	 3	 4	 5
 	 * 16	17	18	19	 6		
 	 * 15	24	 0	20	 7
@@ -120,6 +134,7 @@ public class $PM {
 	 
 	 * 
 	 * After pass 3
+	 * top = 2, bottom = 2, left = 2, rigth = 2
 	 *  1	 2	 3	 4	 5
 	 * 16	17	18	19	 6		
 	 * 15	24	25	20	 7
