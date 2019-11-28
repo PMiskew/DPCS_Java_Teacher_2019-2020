@@ -57,56 +57,79 @@ public class $PM {
 
 	public static int[][] spiralArray(int n) {
 		
-		int[][] arr = new int[n][n];
+		int[][] arr = new int[n][n]; //creates the square array
+		
 		
 		int z = 1;
-		
 		int top = 0;
 		int bottom = n - 1;
 		int left = 0;
 		int right = n - 1;
-		int r = 0;
-		int c = 0;
-		
-		System.out.println(top);
-
-		System.out.println(bottom);
-
-		System.out.println(left);
-
-		System.out.println(right);
-		
 		
 		while (z <= n*n) {
 			
+			//runs along the top row
 			for (int j = left; j <= right; j = j + 1) {
+			
 				arr[top][j] = z;
 				z = z + 1;
+			
 			}
-			top = top + 1;
+			top = top + 1; //increase top by one to remove 
 	
+			//runs along right edge
 			for (int j = top; j <= bottom; j = j + 1) {
 				arr[j][right] = z;
 				z = z + 1;
 			}
 		
-			right = right - 1;
+			right = right - 1; //decrease right edge by one
 			
+			//runs along bottom edge
 			for (int j = right; j >= left; j = j - 1) {
 				arr[bottom][j] = z;
 				z = z + 1;
 			}
 			
-			bottom = bottom - 1;
+			bottom = bottom - 1; //increase bottom edge by one
 			
+			//runs along left side
 			for (int j = bottom; j >= top; j = j - 1) {
 				arr[j][left] = z;
 				z = z + 1;
 			}
 			
-			left = left + 1;
+			left = left + 1; //increase left side by 1
 	}
-		
+	/*
+	 * for n = 5
+	 * After pass 1
+	 *  1	 2	 3	 4	 5
+	 * 16	 0	 0	 0	 6		
+	 * 15	 0	 0	 0	 7
+	 * 14	 0	 0	 0	 8
+	 * 13	12	11	10	 9
+	 
+	 * 
+	 * After pass 2
+	 *  1	 2	 3	 4	 5
+	 * 16	17	18	19	 6		
+	 * 15	24	 0	20	 7
+	 * 14	23	22	21	 8
+	 * 13	12	11	10	 9
+	 
+	 * 
+	 * After pass 3
+	 *  1	 2	 3	 4	 5
+	 * 16	17	18	19	 6		
+	 * 15	24	25	20	 7
+	 * 14	23	22	21	 8
+	 * 13	12	11	10	 9
+	 * Note: Pass three will only do the top row the other
+	 * 		 loops will be skipped since it will condition
+	 * 		 will fail. 
+	 * 
+	 */
 	
 		
 		return arr;
