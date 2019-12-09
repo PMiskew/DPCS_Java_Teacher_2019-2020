@@ -7,7 +7,7 @@ public class ArrayDemo {
 		//An array holds a COLLECTION of data of the same type
 		//An array is a STATIC DATA STRUCTURE - The size must be set before using it. 
 		//An array is a REFERENCE TYPE
-		
+		System.out.println("hello".substring(2));
 		//Creates an array called nums - Length = 4
 		int[] nums = new int[4]; //Indexes - 0 to 3
 		String[] words = new String[10]; //Length 10, Indexes 0 - 9
