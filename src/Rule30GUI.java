@@ -9,6 +9,8 @@ public class Rule30GUI extends JFrame {
 
 	private JPanel[][] panels;
 	private static int[][] result;
+	private static Color[] colors = {Color.BLACK};
+	//private static Color[] colors = {Color.RED, Color.GREEN, Color.BLUE};
 	
 	MouseListener listen = new MouseListener() {
 
@@ -104,7 +106,8 @@ public class Rule30GUI extends JFrame {
 			for (int c = 0; c < arr.length; c++) {
 				
 				if (result[r][c] == 1) {
-					panels[r][c].setBackground(Color.BLACK);
+					int random = (int)(Math.random()*colors.length);
+					panels[r][c].setBackground(colors[random]);
 				}
 			}
 		}
@@ -122,7 +125,9 @@ public class Rule30GUI extends JFrame {
 			for (int c = 0; c < result[r].length; c++) {
 				
 				if (result[r][c] == 1) {
-					panels[r][c].setBackground(Color.BLACK);
+					int random = (int)(Math.random()*colors.length);
+					panels[r][c].setBackground(colors[random]);
+				
 				}
 				else {
 					panels[r][c].setBackground(Color.WHITE);

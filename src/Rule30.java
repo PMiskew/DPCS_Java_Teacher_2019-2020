@@ -47,6 +47,37 @@ public class Rule30 {
 		}
 		return result;
 	}
+	/*
+	public static int[][] genRule30Right(int[][] result, int a) {
+		
+		for (int i = a+1; i < result[0].length; i = i + 1) {
+			System.out.println("TEST");
+			//First element elements
+			result[0][i] = ruleCheck(0,result[0][i - 1],result[1][i - 1]);	
+			
+			for (int j = 1; j < result[i].length - 1; j = j + 1) {
+				
+				result[j][i] = ruleCheck(result[j - 1][i - 1],result[j][i - 1],result[j + 1][i - 1]);	
+			}
+			
+			//last elements
+
+			result[i][result.length - 1] = ruleCheck(result[i - 1][result[i].length - 2],result[i - 1][result[i].length - 1],0);	
+			
+		}
+		
+		for (int row = 0; row < result.length; row = row + 1) {
+			for (int col = 0; col < result[row].length; col = col + 1) {
+				System.out.print(result[row][col]);
+			}
+			System.out.println();
+		}
+		System.out.println();
+		return result;
+	}
+		return result;
+	}
+	8*/
 	
 	public static int[][] genRule30(int[][] result, int a){
 		
