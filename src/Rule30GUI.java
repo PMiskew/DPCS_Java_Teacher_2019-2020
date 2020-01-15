@@ -138,7 +138,7 @@ public class Rule30GUI extends JFrame {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] seed = new int[200];
+		int[] seed = new int[100];
 		//seed[3*seed.length/4-1] = 1;
 		//seed[seed.length/4-1] = 1;
 		seed[seed.length/2-1] = 1;

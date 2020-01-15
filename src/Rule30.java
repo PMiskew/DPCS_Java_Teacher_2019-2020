@@ -7,8 +7,8 @@ public class Rule30 {
 	
 	public static void main(String[] args) {
 		
-		int[] seed = new int[10];
-		seed[seed.length/2] = 1;
+		int[] seed = new int[100]; //seed array
+		seed[seed.length/2] = 1; //initalize value to 1
 		
 		int[][] result = genRule30(seed,seed.length/2 + 1);
 		
@@ -26,7 +26,7 @@ public class Rule30 {
 		
 		int[][] result = new int[n][a.length];
 		
-		//Why not result[0] = a[i]?
+		//Why not result[0] = a?
 		for (int i = 0; i < a.length; i = i + 1) {
 			result[0][i] = a[i];
 		}
@@ -111,6 +111,10 @@ public class Rule30 {
 		//Rules
 		//111 110 101 100 011 010 001 000
 		// 0   0   0   1   1   1   1   0
+		int rand = (int)(Math.random()*10);
+		if (rand < 5) {
+			return 0;
+		}
 		if (a == 1 && b == 1 && c == 1) { return 0; }
 		if (a == 1 && b == 1 && c == 0) { return 0; }
 		if (a == 1 && b == 0 && c == 1) { return 0; }
